@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $fontManrope;
+  margin: 0;
+  padding: 80px 24px;
+  background-color: #ECF2F8;
+}
