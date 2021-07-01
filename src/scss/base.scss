@@ -20,7 +20,6 @@ body {
     background: #FFFFFF;
     box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
     border-radius: 10px;
-    overflow: hidden;
 
     @media (max-width: $mobileBreakpoint) {
       flex-direction: column;
@@ -29,6 +28,9 @@ body {
     .image-container {
       width: 39%;
       display: flex;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      overflow: hidden;
 
       @media (max-width: $mobileBreakpoint) {
         width: 100%;
@@ -85,6 +87,7 @@ body {
       }
 
       .author-container {
+        position: relative;
         width: 100%;
         display: flex;
         align-items: center;
@@ -134,6 +137,7 @@ body {
         }
 
         .share-button {
+          position: relative;
           width: 32px;
           height: 32px;
           border-radius: 32px;
@@ -142,6 +146,7 @@ body {
           justify-content: center;
           background: #ECF2F8;
           cursor: pointer;
+          z-index: 3;
 
           svg {
             width: 15px;
@@ -154,7 +159,60 @@ body {
         }
 
         .share-section {
-          display: none;
+          position: absolute;
+          width: 250px;
+          right: 16px;
+          bottom: 60px;
+          transform: translate(50%, 10px);
+          background: #48556A;
+          box-shadow: 0px 10px 10px rgba(201, 213, 225, 0.503415);
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 18px;
+          z-index: 2;
+          opacity: 0;
+          pointer-events: none;
+
+          &:before {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translate(-50%, -4px) rotate(45deg);
+            width: 17px;
+            height: 17px;
+            background: #48556A;
+          }
+
+          &.is-active {
+            transition: opacity ease-out .2s, transform ease-out .2s;
+            will-change: opacity, transform;
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateX(50%);
+          }
+
+          .share-heading {
+            font-style: normal;
+            font-weight: 200;
+            font-size: 13px;
+            line-height: 20px;
+            letter-spacing: 5px;
+            color: #9DAEC2;
+            text-transform: uppercase;
+            margin: 0 21px 0;
+          }
+
+          .share-link {
+            display: flex;
+            margin-right: 16px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
         }
       }
     }

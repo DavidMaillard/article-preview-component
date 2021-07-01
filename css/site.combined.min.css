@@ -31,8 +31,7 @@ body {
     align-items: stretch;
     background: #FFFFFF;
     box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
-    border-radius: 10px;
-    overflow: hidden; }
+    border-radius: 10px; }
     @media (max-width: 700px) {
       body .card {
         -ms-flex-direction: column;
@@ -40,7 +39,10 @@ body {
     body .card .image-container {
       width: 39%;
       display: -ms-flexbox;
-      display: flex; }
+      display: flex;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      overflow: hidden; }
       @media (max-width: 700px) {
         body .card .image-container {
           width: 100%;
@@ -87,6 +89,7 @@ body {
           body .card .content-container .text {
             margin-bottom: 32px; } }
       body .card .content-container .author-container {
+        position: relative;
         width: 100%;
         display: -ms-flexbox;
         display: flex;
@@ -133,6 +136,7 @@ body {
             color: #9DAEC2;
             margin: 0; }
         body .card .content-container .author-container .share-button {
+          position: relative;
           width: 32px;
           height: 32px;
           border-radius: 32px;
@@ -143,7 +147,8 @@ body {
           -ms-flex-pack: center;
           justify-content: center;
           background: #ECF2F8;
-          cursor: pointer; }
+          cursor: pointer;
+          z-index: 3; }
           body .card .content-container .author-container .share-button svg {
             width: 15px;
             -ms-transform: translate(1px, -2px);
@@ -151,7 +156,57 @@ body {
             body .card .content-container .author-container .share-button svg path {
               fill: #6E8098; }
         body .card .content-container .author-container .share-section {
-          display: none; }
+          position: absolute;
+          width: 250px;
+          right: 16px;
+          bottom: 60px;
+          -ms-transform: translate(50%, 10px);
+          transform: translate(50%, 10px);
+          background: #48556A;
+          box-shadow: 0px 10px 10px rgba(201, 213, 225, 0.503415);
+          border-radius: 10px;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-align: center;
+          align-items: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          padding: 18px;
+          z-index: 2;
+          opacity: 0;
+          pointer-events: none; }
+          body .card .content-container .author-container .share-section:before {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            -ms-transform: translate(-50%, -4px) rotate(45deg);
+            transform: translate(-50%, -4px) rotate(45deg);
+            width: 17px;
+            height: 17px;
+            background: #48556A; }
+          body .card .content-container .author-container .share-section.is-active {
+            transition: opacity ease-out .2s, transform ease-out .2s;
+            will-change: opacity, transform;
+            opacity: 1;
+            pointer-events: auto;
+            -ms-transform: translateX(50%);
+            transform: translateX(50%); }
+          body .card .content-container .author-container .share-section .share-heading {
+            font-style: normal;
+            font-weight: 200;
+            font-size: 13px;
+            line-height: 20px;
+            letter-spacing: 5px;
+            color: #9DAEC2;
+            text-transform: uppercase;
+            margin: 0 21px 0; }
+          body .card .content-container .author-container .share-section .share-link {
+            display: -ms-flexbox;
+            display: flex;
+            margin-right: 16px; }
+            body .card .content-container .author-container .share-section .share-link:last-child {
+              margin-right: 0; }
 
 
 

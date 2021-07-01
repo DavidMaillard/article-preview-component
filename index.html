@@ -53,5 +53,16 @@
   </div>
 </div>
 
+<script>
+  const $shareButton = document.querySelector('.share-button');
+  const $shareSection = document.querySelector('.share-section');
+
+  $shareButton.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    $shareSection.classList.toggle('is-active');
+  })
+</script>
+
 </body>
 </html>
