@@ -1,8 +1,8 @@
 /**
  * @project        frontend-mentor-challenge
  * @author         David Maillard, <maillard.david23@gmail.com>
- * @build          Thu, Jul 1, 2021 8:16 AM ET
- * @release        ba37d4ec52ec4148b5917ca94be2c0e232721858 [master]
+ * @build          Thu, Jul 1, 2021 8:49 AM ET
+ * @release        36cb0cac4759c55964a1364ec9cbec077673bb80 [master]
  * @copyright      Copyright (c) 2021, REPLACE_ME
  *
  */
@@ -46,7 +46,9 @@ body {
       @media (max-width: 700px) {
         body .card .image-container {
           width: 100%;
-          height: calc(min(53vw, 300px)); } }
+          height: calc(min(53vw, 300px));
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 10px; } }
       body .card .image-container img {
         width: 100%;
         height: 100%;
@@ -175,6 +177,26 @@ body {
           z-index: 2;
           opacity: 0;
           pointer-events: none; }
+          @media (max-width: 900px) {
+            body .card .content-container .author-container .share-section {
+              right: -20px;
+              -ms-transform: translateY(10px);
+              transform: translateY(10px); } }
+          @media (max-width: 700px) {
+            body .card .content-container .author-container .share-section {
+              width: auto;
+              left: -32px;
+              top: -20px;
+              right: -32px;
+              bottom: -20px;
+              -ms-transform: none;
+              transform: none;
+              border-radius: 0;
+              border-bottom-left-radius: 10px;
+              border-bottom-right-radius: 10px;
+              padding: 10px 32px;
+              -ms-flex-pack: start;
+              justify-content: flex-start; } }
           body .card .content-container .author-container .share-section:before {
             content: '';
             position: absolute;
@@ -185,6 +207,13 @@ body {
             width: 17px;
             height: 17px;
             background: #48556A; }
+            @media (max-width: 900px) {
+              body .card .content-container .author-container .share-section:before {
+                left: initial;
+                right: 20px; } }
+            @media (max-width: 700px) {
+              body .card .content-container .author-container .share-section:before {
+                display: none; } }
           body .card .content-container .author-container .share-section.is-active {
             transition: opacity ease-out .2s, transform ease-out .2s;
             will-change: opacity, transform;
@@ -192,6 +221,10 @@ body {
             pointer-events: auto;
             -ms-transform: translateX(50%);
             transform: translateX(50%); }
+            @media (max-width: 900px) {
+              body .card .content-container .author-container .share-section.is-active {
+                -ms-transform: translate(0);
+                transform: translate(0); } }
           body .card .content-container .author-container .share-section .share-heading {
             font-style: normal;
             font-weight: 200;
@@ -200,11 +233,17 @@ body {
             letter-spacing: 5px;
             color: #9DAEC2;
             text-transform: uppercase;
-            margin: 0 21px 0; }
+            margin: 0 21px 0 0; }
+            @media (max-width: 374px) {
+              body .card .content-container .author-container .share-section .share-heading {
+                margin-right: 16px; } }
           body .card .content-container .author-container .share-section .share-link {
             display: -ms-flexbox;
             display: flex;
             margin-right: 16px; }
+            @media (max-width: 374px) {
+              body .card .content-container .author-container .share-section .share-link {
+                margin-right: 8px; } }
             body .card .content-container .author-container .share-section .share-link:last-child {
               margin-right: 0; }
 

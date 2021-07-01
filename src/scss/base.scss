@@ -35,6 +35,8 @@ body {
       @media (max-width: $mobileBreakpoint) {
         width: 100%;
         height: calc(min(53vw, 300px));
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 10px;
       }
 
       img {
@@ -175,6 +177,25 @@ body {
           opacity: 0;
           pointer-events: none;
 
+          @media (max-width: 900px) {
+            right: -20px;
+            transform: translateY(10px);
+          }
+
+          @media (max-width: $mobileBreakpoint) {
+            width: auto;
+            left: -32px;
+            top: -20px;
+            right: -32px;
+            bottom: -20px;
+            transform: none;
+            border-radius: 0;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: 10px 32px;
+            justify-content: flex-start;
+          }
+
           &:before {
             content: '';
             position: absolute;
@@ -184,6 +205,15 @@ body {
             width: 17px;
             height: 17px;
             background: #48556A;
+
+            @media (max-width: 900px) {
+              left: initial;
+              right: 20px;
+            }
+
+            @media (max-width: $mobileBreakpoint) {
+              display: none;
+            }
           }
 
           &.is-active {
@@ -192,6 +222,10 @@ body {
             opacity: 1;
             pointer-events: auto;
             transform: translateX(50%);
+
+            @media (max-width: 900px) {
+              transform: translate(0);
+            }
           }
 
           .share-heading {
@@ -202,12 +236,20 @@ body {
             letter-spacing: 5px;
             color: #9DAEC2;
             text-transform: uppercase;
-            margin: 0 21px 0;
+            margin: 0 21px 0 0;
+
+            @media (max-width: 374px) {
+              margin-right: 16px;
+            }
           }
 
           .share-link {
             display: flex;
             margin-right: 16px;
+
+            @media (max-width: 374px) {
+              margin-right: 8px;
+            }
 
             &:last-child {
               margin-right: 0;
