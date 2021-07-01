@@ -11,4 +11,152 @@ body {
   margin: 0;
   padding: 80px 24px;
   background-color: #ECF2F8;
+
+  .card {
+    width: 100%;
+    max-width: 730px;
+    display: flex;
+    align-items: stretch;
+    background: #FFFFFF;
+    box-shadow: 0px 40px 40px -10px rgba(201, 213, 225, 0.503415);
+    border-radius: 10px;
+    overflow: hidden;
+
+    @media (max-width: $mobileBreakpoint) {
+      flex-direction: column;
+    }
+
+    .image-container {
+      width: 39%;
+      display: flex;
+
+      @media (max-width: $mobileBreakpoint) {
+        width: 100%;
+        height: calc(min(53vw, 300px));
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-container: center center;
+      }
+    }
+
+    .content-container {
+      width: 61%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 32px 40px;
+
+      @media (max-width: $mobileBreakpoint) {
+        width: 100%;
+        padding: 36px 32px 20px;
+      }
+
+      .heading {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0.25px;
+        color: #48556A;
+        margin: 0 0 12px;
+
+        @media (max-width: $mobileBreakpoint) {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+
+      .text {
+        font-style: normal;
+        font-weight: 200;
+        font-size: 13px;
+        line-height: 20px;
+        letter-spacing: 0.121875px;
+        color: #6E8098;
+        margin: 0 0 20px;
+
+        @media (max-width: $mobileBreakpoint) {
+          margin-bottom: 32px;
+        }
+      }
+
+      .author-container {
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .author-image-container {
+          flex-shrink: 0;
+          display: flex;
+          width: 40px;
+          height: 40px;
+          border-radius: 40px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-container: center center;
+          }
+        }
+
+        .author-info {
+          flex: 1;
+          padding: 0 16px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .author-name {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 13px;
+            line-height: 20px;
+            letter-spacing: 0.121875px;
+            color: #48556A;
+            margin: 0;
+          }
+
+          .author-date {
+            font-style: normal;
+            font-weight: 200;
+            font-size: 13px;
+            line-height: 20px;
+            letter-spacing: 0.121875px;
+            color: #9DAEC2;
+            margin: 0;
+          }
+        }
+
+        .share-button {
+          width: 32px;
+          height: 32px;
+          border-radius: 32px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #ECF2F8;
+          cursor: pointer;
+
+          svg {
+            width: 15px;
+            transform: translate(1px, -2px);
+
+            path {
+              fill: #6E8098;
+            }
+          }
+        }
+
+        .share-section {
+          display: none;
+        }
+      }
+    }
+  }
 }
